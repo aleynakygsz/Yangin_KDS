@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - KDS Panel</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-section">
+                <img src="/images/logo1.png" alt="OGM Logosu" class="kurum-logo">
+                <h1>Orman Genel Müdürlüğü</h1>
+                <p>Orman Yangınlarıyla Mücadele Dairesi Başkanlığı</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <h2>Yönetici Girişi</h2>
+                
+                <div class="form-group">
+                    <label for="email">
+                        <span class="icon">📧</span>
+                        E-posta
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="ornek@ogm.gov.tr"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="sifre">
+                        <span class="icon">🔒</span>
+                        Şifre
+                    </label>
+                    <input 
+                        type="password" 
+                        id="sifre" 
+                        name="sifre" 
+                        placeholder="••••••••"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div id="hataMsg" class="hata-mesaji" style="display: none;"></div>
+
+                <button type="submit" class="login-btn">
+                    <span>Giriş Yap</span>
+                    <span class="arrow">→</span>
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

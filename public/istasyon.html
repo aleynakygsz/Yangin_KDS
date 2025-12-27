@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstasyon Analizi - KDS Panel</title>
+    <link rel="stylesheet" href="istasyon.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/images/favicon-32x32.png">
+                <p class="brand">Hoşgeldiniz Ahmet Bey</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="yangin.html" class="nav-item">
+                    <span></span> Yangın Analizi
+                </a>
+                <a href="il_analiz.html" class="nav-item">
+                    <span></span> İl Bazlı Analiz
+                </a>
+                <a href="istasyon.html" class="nav-item active">
+                    <span></span> İstasyon Analizi
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>İstasyon Bazlı Analiz</h1>
+                <div class="filters">
+                    <select id="ilSecim" class="filter-select">
+                        <option value="">İl Seçiniz</option>
+                    </select>
+                    <div class="filters">
+                    <!-- Mevcut filtreler -->
+                        <button onclick="cikisYap()" class="cikis-btn">
+                            👤 Çıkış Yap
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 1. Yıllık Müdahale Sayısı (Grouped Bar) -->
+            <div class="chart-container">
+                <h3>İstasyonlara Göre Yıllık Müdahale Sayısı</h3>
+                <canvas id="yillikMudahaleChart"></canvas>
+            </div>
+
+            <!-- 2. Ortalama Alan Kaybı (Bar) -->
+            <div class="chart-container">
+                <h3>İstasyon Başına Ortalama Alan Kaybı (ha)</h3>
+                <canvas id="ortalamaAlanChart"></canvas>
+            </div>
+
+            <!-- 3. Müdahale Tipi (Stacked Bar) -->
+            <div class="chart-container">
+                <h3>Müdahale Tipine Göre Dağılım</h3>
+                <canvas id="mudahaleTipiChart"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <script src="istasyon.js"></script>
+</body>
+</html>

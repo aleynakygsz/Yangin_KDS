@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* ARKA PLAN RESMİ BURADAN AYARLANIYOR */
+    /* Resmin üzerine koyu bir filtre attık ki yazılar okunsun */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/orman-bg.jpg');
+    
+    /* Resmi ekrana tam sığdırır */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-box {
+    /* Tam beyaz yerine %85 opaklıkta beyaz (hafif şeffaf) */
+    background: rgba(255, 255, 255, 0.85);
+    /* Arkadaki ormanı buzlu cam gibi flulaştırır */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Safari için */
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Gölgeyi biraz koyulaştırdık */
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* İnce cam kenarlığı */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-section {
+    /* Mor yerine OGM Yeşili/Koyu Yeşil tonları */
+    background: linear-gradient(135deg, rgba(28, 88, 45, 0.95) 0%, rgba(14, 54, 26, 0.95) 100%);
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+    /* Altına hafif bir çizgi */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fire-icon {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.logo-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.logo-section p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.login-form {
+    padding: 40px 30px;
+}
+
+.login-form h2 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group .icon {
+    font-size: 18px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.hata-mesaji {
+    background: #fee;
+    color: #c33;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c33;
+    font-size: 14px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    /* Butonu da yeşil tonlarına çektik */
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.5);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.login-btn .arrow {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.login-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+.bilgi-kutusu {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px dashed #667eea;
+    text-align: center;
+}
+
+.bilgi-kutusu p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.bilgi-kutusu strong {
+    color: #667eea;
+}
+
+/* Loading state */
+.login-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.login-btn.loading::after {
+    content: "⏳";
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .login-box {
+        border-radius: 15px;
+    }
+    
+    .logo-section {
+        padding: 30px 20px;
+    }
+    
+    .login-form {
+        padding: 30px 20px;
+    }
+}
+.kurum-logo {
+    width: 120px;       /* Logonun genişliği (Orta boy) */
+    height: auto;       /* Orantısı bozulmasın */
+    margin-bottom: 15px; /* Yazıyla arasına boşluk koyar */
+    display: block;     /* Bloğa çevirir */
+    margin-left: auto;  /* Ortalamak için */
+    margin-right: auto; /* Ortalamak için */
+    max-width: 100%;    /* Asla kutu genişliğini aşmasın */
+}

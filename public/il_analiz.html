@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İl Bazlı Analiz - KDS Panel</title>
+    <link rel="stylesheet" href="il_analiz.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/images/favicon-32x32.png">
+                <p class="brand">Hoşgeldiniz Ahmet Bey</p>
+            </div>
+            <nav class="nav-menu">
+                <a href="yangin.html" class="nav-item">
+                    <span></span> Yangın Analizi
+                </a>
+                <a href="il_analiz.html" class="nav-item active">
+                    <span></span> İl Bazlı Analiz
+                </a>
+                <a href="istasyon.html" class="nav-item">
+                    <span></span> İstasyon Analizi
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>İl Bazlı Analiz</h1>
+                <div class="filters">
+                    <select id="il1Secim" class="filter-select">
+                        <option value="">İl 1 Seçiniz</option>
+                    </select>
+                    <select id="il2Secim" class="filter-select">
+                        <option value="none">İl 2 (Opsiyonel)</option>
+                    </select>
+                    <div class="filters">
+                    <!-- Mevcut filtreler -->
+                        <button onclick="cikisYap()" class="cikis-btn">
+                            👤 Çıkış Yap
+                         </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Line Charts (Büyük) -->
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Yıllara Göre Yangın Sayısı</h3>
+                    <canvas id="yanginSayisiChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Yıllara Göre Kaybedilen Alan (ha)</h3>
+                    <canvas id="kaybedilenAlanChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="il_analiz.js"></script>
+</body>
+</html>

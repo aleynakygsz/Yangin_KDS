@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Analiz Paneli</title>
+    <link rel="stylesheet" href="yangin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+            <img src="/images/favicon-32x32.png">
+            <p class="brand">Hoşgeldiniz Ahmet Bey</p>
+        </div>    
+            <nav class="nav-menu">
+                <a href="yangin.html" class="nav-item active"><span></span> Yangın Analizi</a>
+                <a href="il_analiz.html" class="nav-item"><span></span> İl Bazlı Analiz</a>
+                <a href="istasyon.html" class="nav-item"><span></span> İstasyon Analizi</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Yönetici Analiz Paneli</h1> <div class="filters">
+                    <select id="yilSecim" class="filter-select">
+                        <option value="2025">2025 Sezonu</option>
+                        <option value="2024">2024 Sezonu</option>
+                        <option value="2023" selected>2023 Sezonu</option>
+                        <option value="2022">2022 Sezonu</option>
+                    </select>
+                <div class="filters">
+                    <!-- Mevcut filtreler -->
+                    <button onclick="cikisYap()" class="cikis-btn">
+                         👤 Çıkış Yap
+                    </button>
+                </div>    
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Toplam Yangın</h3>
+                        <p class="stat-value" id="toplamYangin">-</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Kaybedilen Alan (ha)</h3>
+                        <p class="stat-value" id="kaybedilenAlan">-</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>En Riskli İl</h3>
+                        <p class="stat-value" id="enRiskliIl">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid-2x2">
+                <div class="chart-container">
+    <h3>Türkiye Orman Varlığı ve Yangın Riski</h3>
+    <div id="turkiyeMap" style="height: 500px;"></div>
+</div>
+
+                <div class="chart-container">
+                    <h3>Yıllara Göre Yangın Eğilimi</h3>
+                    <canvas id="yanginTrendChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Yangın Neden Dağılımı</h3>
+                    <canvas id="nedenChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>En Çok Yangın Çıkan 4 İl</h3>
+                    <canvas id="topIllerChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Yıllara Göre Kaybedilen Alan (ha)</h3>
+                    <canvas id="alanTrendChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="yangin.js"></script>
+</body>
+</html>
