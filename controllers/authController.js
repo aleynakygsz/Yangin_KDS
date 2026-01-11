@@ -63,3 +63,27 @@ exports.cikisYap = (req, res) => {
     message: 'Çıkış başarılı!' 
   });
 };
+
+// CREATE – yeni kullanıcı ekle
+exports.kullaniciEkle = async (req, res) => {
+  const { email, sifre } = req.body;
+
+  await db.query(
+    'INSERT INTO kullanicilar (email, sifre) VALUES (?, ?)',
+    [email, sifre]
+  );
+
+  res.json({ message: 'Kullanıcı eklendi' });
+};
+
+// DELETE – kullanıcı sil
+exports.kullaniciSil = async (req, res) => {
+  const { id } = req.params;
+
+  await db.query(
+    'DELETE FROM kullanicilar WHERE kullanici_id = ?',
+    [id]
+  );
+
+  res.json({ message: 'Kullanıcı silindi' });
+};
