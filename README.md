@@ -9,10 +9,12 @@ Dairesi Başkanlığı bünyesinde görev yapan orta düzey yöneticilerin, geç
 yapabilmesini amaçlamaktadır.
 
 ## KURULUM 
-1-Proje bilgisyarda
-2-Proje klsörüne girilir
-3-Gerekli bağımlılıklar yüklenir 
-4-Sunucu başlatılır
+1-Node.js ve MySQL bilgisayara kurulur.
+2-Proje dosyaları indirilir ve proje klasörüne girilir.
+3-Gerekli paketler npm install komutu ile yüklenir.
+4-MySQL üzerinde veritabanı ve tablolar oluşturulur.
+5-Veritabanı bağlantı ayarları yapılır.
+6-Sunucu npm start komutu ile çalıştırılır.
 
 ## Kullanılan Teknolojiler
 - Node.js
